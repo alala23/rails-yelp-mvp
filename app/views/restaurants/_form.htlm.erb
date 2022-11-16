@@ -1,0 +1,31 @@
+<!-- <%#= form_with @restaurant do |f| %>
+  <div class="form-group">
+    <%#= f.label :name %>
+    <%#= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%#= f.label :address %>
+    <%#= f.text_field :address, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%#= f.label :category %>
+    <%#= f.select :category, collection: Restaurant::CATEGORIES, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%#= f.label :phone_number %>
+    <%#= f.date_field :phone_number, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%#= f.submit class: "btn btn-primary" %>
+  </div>
+<%# end %> -->
+
+<%= simple_form_for @restaurant do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :category, collection: Restaurant::CATEGORIES %>
+  <%= f.input :phone_number %>
+  <%= f.submit class: "btn btn-primary mt-4" %>
+  <%#= link_to "Delete", restaurant_path(Restaurant.last), data: { turbo_method: :delete, turbo_confirm: "Are your sure?" } %>
+  <%#= button_to "Delete", restaurant_path(Restaurant.last), method: :delete, form: { data: { turbo_confirm: "Are your sure?" } } %>
+<% end %>
